@@ -1,22 +1,285 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #e2e8f0;
+}
+
+/* Layout */
+
+.layout {
   display: grid;
-  grid-template-columns: 250px 1fr;
-  grid-template-rows: 150px 1fr;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: 160px 1fr;
   height: 100vh;
 }
+
+/* Sidebar */
 
 .sidebar {
   grid-row: 1 / 3;
   grid-column: 1 / 2;
+  background: #1992d4;
+  color: #fff;
+  padding: 20px;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 30px;
 }
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-icon {
+  font-size: 32px;
+}
+
+.brand h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.sidebar li {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.sidebar li span.icon {
+  text-align: center;
+}
+
+/* Header */
 
 .header {
   grid-row: 1 / 2;
   grid-column: 2 / 3;
+  background: #fff;
+  padding: 15px 30px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
+.header-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: none;
+  background: #e2e8f0;
+}
+
+.user-top {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+}
+
+.username {
+  font-weight: 700;
+}
+
+.header-bottom {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+}
+
+.user-greeting {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.greeting {
+  margin: 0;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.name-handle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.header-buttons button {
+  border: none;
+  border-radius: 999px;
+  padding: 8px 18px;
+  background: #1992d4;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Main content */
 
 .main-content {
   grid-row: 2 / 3;
   grid-column: 2 / 3;
+  padding: 20px 30px 30px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+  background: #e2e8f0;
 }
+
+/* Projects */
+
+.projects h2,
+.side-column h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 18px;
+  border-left: 6px solid #f59e0b;
+  display: grid;
+  gap: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.project-card h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.project-card p {
+  margin: 0;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  font-size: 18px;
+}
+
+/* Side column */
+
+.side-column {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+
+/* Cards */
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 18px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+/* Announcements */
+
+.announcement-item h3 {
+  margin: 0 0 4px;
+  font-size: 14px;
+}
+
+.announcement-item p {
+  margin: 0;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 12px 0;
+}
+
+/* Trending */
+
+.trending-list {
+  display: grid;
+  gap: 12px;
+}
+
+.trending-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.handle {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.project-name {
+  margin: 0;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Avatars */
+
+.avatar {
+  border-radius: 50%;
+}
+
+.avatar.small {
+  width: 40px;
+  height: 40px;
+}
+
+.avatar.large {
+  width: 60px;
+  height: 60px;
