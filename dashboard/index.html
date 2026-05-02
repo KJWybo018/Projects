@@ -2,10 +2,197 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dashboard</title>
+  <title>Admin Dashboard</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Test</h1>
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">📊</div>
+        <h1>Dashboard</h1>
+      </div>
+
+      <nav class="main-nav">
+        <ul>
+          <li><span class="icon">🏠</span> <span>Home</span></li>
+          <li><span class="icon">👤</span> <span>Profile</span></li>
+          <li><span class="icon">✉️</span> <span>Messages</span></li>
+          <li><span class="icon">🕒</span> <span>History</span></li>
+          <li><span class="icon">📁</span> <span>Tasks</span></li>
+          <li><span class="icon">👥</span> <span>Communities</span></li>
+        </ul>
+      </nav>
+
+      <nav class="secondary-nav">
+        <ul>
+          <li><span class="icon">⚙️</span> <span>Settings</span></li>
+          <li><span class="icon">❓</span> <span>Support</span></li>
+          <li><span class="icon">🔒</span> <span>Privacy</span></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-top">
+        <div class="search">
+          <span class="icon">🔍</span>
+          <input type="text" placeholder="Search...">
+        </div>
+
+        <div class="user-top">
+          <span class="icon">🔔</span>
+          <img class="avatar small" src="https://via.placeholder.com/40" alt="User avatar">
+          <span class="username">Kyle Wybo</span>
+        </div>
+      </div>
+
+      <div class="header-bottom">
+        <div class="user-greeting">
+          <img class="avatar large" src="https://via.placeholder.com/60" alt="User avatar">
+          <div>
+            <p class="greeting">Hi there,</p>
+            <p class="name-handle">Kyle Wybo (@kyle)</p>
+          </div>
+        </div>
+
+        <div class="header-buttons">
+          <button>New</button>
+          <button>Upload</button>
+          <button>Share</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <!-- Projects -->
+      <section class="projects">
+        <h2>Your Projects</h2>
+        <div class="project-grid">
+          <article class="project-card">
+            <h3>Super Cool Project</h3>
+            <p>A short description about this project and what it does.</p>
+            <div class="card-actions">
+              <span>⭐</span>
+              <span>👁️</span>
+              <span>🔗</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Less Cool Project</h3>
+            <p>Another description to fill space and test layout.</p>
+            <div class="card-actions">
+              <span>⭐</span>
+              <span>👁️</span>
+              <span>🔗</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Impossible App</h3>
+            <p>Some wild idea that probably shouldn’t work but might.</p>
+            <div class="card-actions">
+              <span>⭐</span>
+              <span>👁️</span>
+              <span>🔗</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Easy Peasy App</h3>
+            <p>Simple, clean, and effective. Just like this layout.</p>
+            <div class="card-actions">
+              <span>⭐</span>
+              <span>👁️</span>
+              <span>🔗</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Ad Blocker</h3>
+            <p>Blocks everything, including your own productivity.</p>
+            <div class="card-actions">
+              <span>⭐</span>
+              <span>👁️</span>
+              <span>🔗</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <h3>Money Maker</h3>
+            <p>Definitely not a pyramid scheme. Probably.</p>
+            <div class="card-actions">
+              <span>⭐</span>
+              <span>👁️</span>
+              <span>🔗</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Right column: Announcements + Trending -->
+      <section class="side-column">
+        <div class="announcements">
+          <h2>Announcements</h2>
+          <div class="card">
+            <div class="announcement-item">
+              <h3>Site Maintenance</h3>
+              <p>We’ll be down for maintenance this weekend. Plan accordingly.</p>
+            </div>
+            <div class="divider"></div>
+            <div class="announcement-item">
+              <h3>New Feature</h3>
+              <p>Check out the new dashboard customization options.</p>
+            </div>
+            <div class="divider"></div>
+            <div class="announcement-item">
+              <h3>Community Guidelines</h3>
+              <p>We’ve updated our guidelines. Please take a moment to review.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="trending">
+          <h2>Trending</h2>
+          <div class="card trending-list">
+            <div class="trending-item">
+              <img class="avatar small" src="https://via.placeholder.com/40" alt="User avatar">
+              <div>
+                <p class="handle">@tegan</p>
+                <p class="project-name">World Peace Builder</p>
+              </div>
+            </div>
+            <div class="trending-item">
+              <img class="avatar small" src="https://via.placeholder.com/40" alt="User avatar">
+              <div>
+                <p class="handle">@morgan</p>
+                <p class="project-name">Super Cool Project</p>
+              </div>
+            </div>
+            <div class="trending-item">
+              <img class="avatar small" src="https://via.placeholder.com/40" alt="User avatar">
+              <div>
+                <p class="handle">@kendall</p>
+                <p class="project-name">Life Changing App</p>
+              </div>
+            </div>
+            <div class="trending-item">
+              <img class="avatar small" src="https://via.placeholder.com/40" alt="User avatar">
+              <div>
+                <p class="handle">@alex</p>
+                <p class="project-name">No Sleep Tracker</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </div>
 </body>
-</html>
