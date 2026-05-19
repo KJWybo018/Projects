@@ -1,1 +1,84 @@
+generator client {
+  provider = "prisma-client-js"
+}
 
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  name         String
+  passwordHash String?  @map("password_hash")
+  googleId     String?  @unique @map("google_id")
+  createdAt    DateTime @default(now()) @map("created_at")
+  jobs         Job[]
+
+  @@map("users")
+}
+
+enum JobStatus {
+  applied
+  phone_screen
+  interview
+  offer
+  rejected
+  ghosted
+}
+
+model Job {
+  id        String    @id @default(uuid())
+  userId    String    @map("user_id")
+  company   String
+  role      String
+  status    JobStatus @default(applied)
+  url       String?
+  salaryMin Int?      @map("salary_min")
+  salaryMax Int?      @map("salary_max")
+  appliedAt DateTime  @default(now()) @map("applied_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+
+  user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  notes     Note[]
+  reminders Reminder[]
+  contacts  Contact[]
+
+  @@map("jobs")
+}
+
+model Note {
+  id        String   @id @default(uuid())
+  jobId     String   @map("job_id")
+  body      String
+  createdAt DateTime @default(now()) @map("created_at")
+
+  job       Job      @relation(fields: [jobId], references: [id], onDelete: Cascade)
+
+  @@map("notes")
+}
+
+model Reminder {
+  id         String   @id @default(uuid())
+  jobId      String   @map("job_id")
+  message    String
+  remindAt   DateTime @map("remind_at")
+  sent       Boolean  @default(false)
+
+  job        Job      @relation(fields: [jobId], references: [id], onDelete: Cascade)
+
+  @@map("reminders")
+}
+
+model Contact {
+  id    String  @id @default(uuid())
+  jobId String  @map("job_id")
+  name  String
+  role  String?
+  email String?
+
+  job   Job     @relation(fields: [jobId], references: [id], onDelete: Cascade)
+
+  @@map("contacts")
+}
