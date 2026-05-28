@@ -18,3 +18,8 @@ class Packet():
     self.size = size
 
 
+def handle_packet_arrived_router():
+
+return 0
+
+def handle_
