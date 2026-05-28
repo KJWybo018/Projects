@@ -20,6 +20,13 @@ class Packet():
 
 def handle_packet_arrived_router():
 
-return 0
 
-def handle_
+  return 0
+
+def handle_packet_leaves_router():
+
+  return 0
+
+def handle_packet_arrived_dest():
+
+  return 0
