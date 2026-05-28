@@ -1,5 +1,6 @@
 # Author: Kyle Wybo
 # Date Created: 05/28/2026
+import heapq
 
 class Event():
 
@@ -19,8 +20,10 @@ class Packet():
 
 
 def handle_packet_arrived_router():
-
-
+  if node.currUse < node.memMax:
+    
+  else :
+    
   return 0
 
 def handle_packet_leaves_router():
